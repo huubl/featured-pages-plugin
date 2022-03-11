@@ -38,7 +38,7 @@ export default function Edit(props)
                 >
                     <ContentPicker
                         onPickChange={handlePostSelection}
-                        content={[{"id":279,"uuid":"8a0bea1f-ccfd-4177-8598-cbd9bc55ef29","type":"page"}]}
+                        content={selectedPosts}
                         mode="post"
                         maxContentItems={4}
                         isOrderable={true}
