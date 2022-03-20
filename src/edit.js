@@ -14,51 +14,45 @@ import './editor.scss';
  * @see https://developer.wordpress.org/block-editor/developers/block-api/block-edit-save/#edit
  * @return {WPElement} Element to render.
  */
-export default function Edit(props)
-{
-    const {
-        attributes: { selectedPosts },
-        setAttributes,
-    } = props;
+export default function Edit(props) {
+	const { attributes, setAttributes } = props;
 
-    function handlePostSelection(post)
-    {
-        setAttributes({ selectedPosts: post });
-    }
+	const { selectedPosts } = attributes;
 
-    const blockProps = useBlockProps();
+	function handlePostSelection(post) {
+		setAttributes({ selectedPosts: post });
+	}
 
-    return (
-        <>
-            <InspectorControls>
-                <PanelBody
-                    title={__('Options', 'featured-pages-plugin')}
-                    icon="admin-post"
-                    initialOpen={true}
-                >
-                    <ContentPicker
-                        onPickChange={handlePostSelection}
-                        content={selectedPosts}
-                        mode="post"
-                        maxContentItems={4}
-                        isOrderable={true}
-                        label={__(
-                            "Select featured pages",
-                            'featured-pages-plugin'
-                        )}
-                        contentTypes={['post', 'page']}
-                    />
-                </PanelBody>
-            </InspectorControls>
+	const blockProps = useBlockProps();
 
-            <div {...blockProps}>
-                <Disabled>
-                    <ServerSideRender
-                        block="create-block/featured-pages-plugin"
-                        attributes={selectedPosts}
-                    />
-                </Disabled>
-            </div>
-        </>
-    );
+	return (
+		<>
+			<InspectorControls>
+				<PanelBody
+					title={__('Options', 'featured-pages')}
+					icon="admin-post"
+					initialOpen={true}
+				>
+					<ContentPicker
+						onPickChange={handlePostSelection}
+						content={selectedPosts}
+						mode="post"
+						maxContentItems={4}
+						isOrderable={true}
+						label={__('Select featured pages', 'featured-pages')}
+						contentTypes={['post', 'page']}
+					/>
+				</PanelBody>
+			</InspectorControls>
+
+			<div {...blockProps}>
+				<Disabled>
+					<ServerSideRender
+						block="huubl/featured-pages"
+						attributes={attributes}
+					/>
+				</Disabled>
+			</div>
+		</>
+	);
 }

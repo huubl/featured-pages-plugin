@@ -1,7 +1,7 @@
 {
-	"name": "featured-pages-plugin",
+	"name": "featured-pages-block",
 	"version": "0.1.0",
-	"author": "The WordPress Contributors",
+	"author": "Huubl",
 	"license": "GPL-2.0-or-later",
 	"main": "build/index.js",
 	"scripts": {
@@ -14,7 +14,7 @@
 		"start": "wp-scripts start"
 	},
 	"devDependencies": {
-		"@10up/block-components": "1.8.1-next.0",
+		"@10up/block-components": "1.8.1-next.1",
 		"@wordpress/scripts": "^22.2.1"
 	}
 }

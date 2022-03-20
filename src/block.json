@@ -1,11 +1,11 @@
 {
 	"$schema": "https://schemas.wp.org/trunk/block.json",
 	"apiVersion": 2,
-	"name": "create-block/featured-pages-plugin",
+	"name": "huubl/featured-pages",
 	"version": "0.1.0",
-	"title": "Featured Pages Plugin",
+	"title": "Featured Pages",
 	"category": "widgets",
-	"textdomain": "featured-pages-plugin",
+	"textdomain": "featured-pages",
 	"attributes": {
 		"selectedPosts": {
 		  "type": "array"
